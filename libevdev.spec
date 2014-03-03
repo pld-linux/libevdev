@@ -5,16 +5,17 @@
 Summary:	Handler library for evdev events
 Summary(pl.UTF-8):	Biblioteka obsługująca zdarzenia evdev
 Name:		libevdev
-Version:	0.5
+Version:	1.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://www.freedesktop.org/software/libevdev/%{name}-%{version}.tar.xz
-# Source0-md5:	851ac31ff9b85591cbdc92724840a179
+# Source0-md5:	16dc171b8cd6631b266bb45c5f9634fe
 URL:		http://www.freedesktop.org/wiki/Software/libevdev/
 BuildRequires:	check-devel >= 0.9.9
 %{?with_apidocs:BuildRequires:	doxygen}
 BuildRequires:	pkgconfig
+BuildRequires:	python >= 1:2.6
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -90,13 +91,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING
 %attr(755,root,root) %{_libdir}/libevdev.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libevdev.so.1
+%attr(755,root,root) %ghost %{_libdir}/libevdev.so.2
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libevdev.so
 %{_includedir}/libevdev-1.0
 %{_pkgconfigdir}/libevdev.pc
+%{_mandir}/man3/libevdev.3*
 
 %files static
 %defattr(644,root,root,755)
