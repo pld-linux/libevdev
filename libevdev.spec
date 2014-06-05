@@ -5,12 +5,12 @@
 Summary:	Handler library for evdev events
 Summary(pl.UTF-8):	Biblioteka obsługująca zdarzenia evdev
 Name:		libevdev
-Version:	1.2.1
+Version:	1.2.2
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://www.freedesktop.org/software/libevdev/%{name}-%{version}.tar.xz
-# Source0-md5:	635bafe27f71772f8eb27a12f94a80d7
+# Source0-md5:	7c1ee9c2069489b2a25dfde6f8e2ff6a
 URL:		http://www.freedesktop.org/wiki/Software/libevdev/
 BuildRequires:	check-devel >= 0.9.9
 %{?with_apidocs:BuildRequires:	doxygen}
