@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
-#
+
 Summary:	Handler library for evdev events
 Summary(pl.UTF-8):	Biblioteka obsługująca zdarzenia evdev
 Name:		libevdev
 Version:	1.4.6
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://www.freedesktop.org/software/libevdev/%{name}-%{version}.tar.xz
@@ -54,6 +54,9 @@ Statyczna biblioteka libevdev.
 Summary:	libevdev API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libevdev
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for libevdev library.
