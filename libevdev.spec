@@ -5,12 +5,12 @@
 Summary:	Handler library for evdev events
 Summary(pl.UTF-8):	Biblioteka obsługująca zdarzenia evdev
 Name:		libevdev
-Version:	1.9.1
+Version:	1.10.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://www.freedesktop.org/software/libevdev/%{name}-%{version}.tar.xz
-# Source0-md5:	58286a834ae14536caf9cab8633419cf
+# Source0-md5:	c6239ef0d61c4f4911f25bb8426a0b82
 URL:		https://www.freedesktop.org/wiki/Software/libevdev/
 BuildRequires:	check-devel >= 0.9.9
 %{?with_apidocs:BuildRequires:	doxygen}
@@ -98,6 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/touchpad-edge-detector
 %attr(755,root,root) %{_libdir}/libevdev.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libevdev.so.2
+%{_mandir}/man1/libevdev-tweak-device.1*
+%{_mandir}/man1/touchpad-edge-detector.1*
+
 
 %files devel
 %defattr(644,root,root,755)
