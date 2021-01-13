@@ -16,6 +16,7 @@ BuildRequires:	check-devel >= 0.9.9
 %{?with_apidocs:BuildRequires:	doxygen}
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.6
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -54,9 +55,7 @@ Statyczna biblioteka libevdev.
 Summary:	libevdev API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libevdev
 Group:		Documentation
-%if "%{_rpmversion}" >= "4.6"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 API documentation for libevdev library.
