@@ -55,7 +55,7 @@ Statyczna biblioteka libevdev.
 Summary:	libevdev API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libevdev
 Group:		Documentation
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 API documentation for libevdev library.
