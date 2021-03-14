@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	apidocs		# do not build and package API docs
+%bcond_without	apidocs		# Doxygen based API documentation
 
 Summary:	Handler library for evdev events
 Summary(pl.UTF-8):	Biblioteka obsługująca zdarzenia evdev
@@ -15,7 +15,8 @@ URL:		https://www.freedesktop.org/wiki/Software/libevdev/
 BuildRequires:	check-devel >= 0.9.9
 %{?with_apidocs:BuildRequires:	doxygen}
 BuildRequires:	pkgconfig
-BuildRequires:	python >= 1:2.6
+BuildRequires:	python3 >= 1:3.4
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -70,6 +71,7 @@ Dokumentacja API biblioteki libevdev.
 
 %build
 %configure \
+	PYTHON=%{__python3} \
 	--disable-silent-rules
 
 %{__make}
