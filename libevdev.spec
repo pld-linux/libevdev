@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# Doxygen based API documentation
+%bcond_without	static_libs	# static library
 
 Summary:	Handler library for evdev events
 Summary(pl.UTF-8):	Biblioteka obsługująca zdarzenia evdev
@@ -72,7 +73,8 @@ Dokumentacja API biblioteki libevdev.
 %build
 %configure \
 	PYTHON=%{__python3} \
-	--disable-silent-rules
+	--disable-silent-rules \
+	%{__enable_disable static_libs static}
 
 %{__make}
 
@@ -111,9 +113,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/libevdev.pc
 %{_mandir}/man3/libevdev.3*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libevdev.a
+%endif
 
 %if %{with apidocs}
 %files apidocs
