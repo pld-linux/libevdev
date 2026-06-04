@@ -6,12 +6,12 @@
 Summary:	Handler library for evdev events
 Summary(pl.UTF-8):	Biblioteka obsługująca zdarzenia evdev
 Name:		libevdev
-Version:	1.13.5
+Version:	1.13.6
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://www.freedesktop.org/software/libevdev/%{name}-%{version}.tar.xz
-# Source0-md5:	582e2ae5a076a34d479d420776f8fd27
+# Source0-md5:	4202ff132e3efe95fe9ca2c4f8f119f7
 URL:		https://www.freedesktop.org/wiki/Software/libevdev/
 BuildRequires:	check-devel >= 0.9.9
 %{?with_apidocs:BuildRequires:	doxygen}
@@ -99,8 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/libevdev-tweak-device
 %attr(755,root,root) %{_bindir}/mouse-dpi-tool
 %attr(755,root,root) %{_bindir}/touchpad-edge-detector
-%attr(755,root,root) %{_libdir}/libevdev.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libevdev.so.2
+%{_libdir}/libevdev.so.*.*.*
+%ghost %{_libdir}/libevdev.so.2
 %{_mandir}/man1/libevdev-tweak-device.1*
 %{_mandir}/man1/mouse-dpi-tool.1*
 %{_mandir}/man1/touchpad-edge-detector.1*
@@ -108,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libevdev.so
+%{_libdir}/libevdev.so
 %{_includedir}/libevdev-1.0
 %{_pkgconfigdir}/libevdev.pc
 %{_mandir}/man3/libevdev.3*
